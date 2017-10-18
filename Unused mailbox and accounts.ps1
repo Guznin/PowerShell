@@ -1,4 +1,4 @@
-﻿$ListUsers = Get-ADUser -SearchBase "OU=Disabled,DC=ahml1,DC=ru" -Filter * -Properties DisplayName, AccountExpirationDate,Enabled, MemberOf, Description, msExchWhenMailboxCreated, ObjectGUID, LastLogonDate, Enabled, homeMDB | Where-Object {$_.homeMDB -ne $null}
+﻿$ListUsers = Get-ADUser -SearchBase "OU=OU_NAME,DC=CONTOSO,DC=COM" -Filter * -Properties DisplayName, AccountExpirationDate,Enabled, MemberOf, Description, msExchWhenMailboxCreated, ObjectGUID, LastLogonDate, Enabled, homeMDB | Where-Object {$_.homeMDB -ne $null}
 
 $ListUsersndMailbox = Foreach ($user in $ListUsers)
 
